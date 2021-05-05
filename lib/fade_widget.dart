@@ -27,7 +27,9 @@ class _FadeWidgetState extends AnimationState<FadeWidget> {
 class ConsecutiveFadeWidgets extends StatelessWidget {
   ConsecutiveFadeWidgets({
     required this.children,
+    required this.direction,
     required this.fadeDuration,
+    this.interval = const Duration(),
     this.delayDuration = const Duration(),
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.crossAxisAlignment = CrossAxisAlignment.center,
@@ -35,22 +37,26 @@ class ConsecutiveFadeWidgets extends StatelessWidget {
 
   final List<Widget> children;
   final Duration fadeDuration;
+  /// After this(Default is 0s), Animation will start.
+  final Duration interval;
 
   /// After this(Default is 0s), Animation will start.
   final Duration delayDuration;
 
+  final Axis direction;
   final MainAxisAlignment mainAxisAlignment;
   final CrossAxisAlignment crossAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Flex(
+      direction: direction,
       mainAxisAlignment: mainAxisAlignment,
       crossAxisAlignment: crossAxisAlignment,
       children: children.asMap().map((index, widget) {
         return MapEntry(index, FadeWidget(
           fadeDuration: fadeDuration,
-          delayDuration: delayDuration + (fadeDuration * index * 2),
+          delayDuration: delayDuration + ((fadeDuration + interval) * index),
           child: widget,
         ));
       }).values.toList(),
