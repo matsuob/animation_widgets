@@ -26,6 +26,7 @@ class _FadeWidgetState extends AnimationState<FadeWidget> {
 
 class ConsecutiveFadeWidgets extends StatelessWidget {
   ConsecutiveFadeWidgets({
+    Key? key,
     required this.children,
     required this.direction,
     required this.fadeDuration,
@@ -33,7 +34,7 @@ class ConsecutiveFadeWidgets extends StatelessWidget {
     this.delayDuration = const Duration(),
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.crossAxisAlignment = CrossAxisAlignment.center,
-  }): super();
+  }): super(key: key);
 
   final List<Widget> children;
   final Duration fadeDuration;
