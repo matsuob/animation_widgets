@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+- [FadeWidget](https://github.com/matsuob/animation_widgets/blob/master/lib/fade_widget.dart) was released.
