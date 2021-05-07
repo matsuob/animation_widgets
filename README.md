@@ -12,7 +12,7 @@ dependencies:
   animation_widgets:
     git:
       url: git@github.com:matsuob/animation_widgets.git
-      ref: 0.0.1
+      ref: master
 ```
 
 ### 2. Run flutter pub get in the terminal.
