@@ -1,4 +1,4 @@
-# animation_widgets
+# animation_widgets(Beta release)
 
 This is a Flutter package.  
 This provides animation widget.
