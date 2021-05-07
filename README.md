@@ -1,5 +1,6 @@
 # animation_widgets
 
+This is a Flutter package.  
 This provides animation widget.
 
 ## Getting Started
